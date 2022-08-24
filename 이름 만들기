@@ -17,8 +17,8 @@ name3=Image("09900:"
             "90090:"
             "90090:"
             "09909:")
-
-display.scroll("Shin Jua")
-sleep(1000)
 name=[name1,Image.HEART,name2,Image.HEART,name3]
-display.show(name,loop=True,delay=1000)
+while True:
+    display.scroll("Shin Jua")
+    sleep(1000)
+    display.show(name,delay=1000)
