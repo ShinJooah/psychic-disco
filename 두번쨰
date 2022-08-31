@@ -1,0 +1,88 @@
+from microbit import*
+
+
+    
+name = "shinjua"
+for j in name:
+    display.show(j)
+    sleep(1000)
+    
+for i in range(10):
+    display.show(i)
+    sleep(1000)
+
+
+from microbit import*
+light9 = Image("99999:99999:99999:99999:99999")
+light7 = Image("77777:77777:77777:77777:77777")
+light5 = Image("55555:55555:55555:55555:55555")
+light3 = Image("33333:33333:33333:33333:33333")
+light1 = Image("11111:11111:11111:11111:11111")
+light0 = Image("00000:00000:00000:00000:00000")
+
+while True:
+    
+    light = display.read_light_level()
+    display.scroll(light)
+    if light<10:
+        display.show(light9)
+    elif light<50:
+        display.show(light7)
+    elif light<100:
+        display.show(light5)
+    elif light<150:
+        display.show(light3)
+    elif light<200:
+        display.show(light1)
+    else:
+        display.show(light0)
+    
+    sleep(1000)
+
+
+from microbit import*
+
+while True:
+    if button_a.is_pressed() and button_b.is_pressed():
+        for i in range(1,6,1):
+            display.show(Image.HEART)
+            sleep(300)
+            display.show(Image.HEART_SMALL)
+            sleep(300)
+    if button_a.is_pressed():
+        display.show(Image.HAPPY)
+        
+    if button_b.is_pressed():
+        display.show(Image.SAD)
+    
+
+
+from microbit import*
+
+while True:
+    
+    if button_a.is_pressed():
+        pin0.write_digital(1)
+        
+    if button_b.is_pressed():
+        pin0.write_digital(0)
+    
+
+from microbit import*
+
+max = 0
+min = 99
+
+while True:
+    tem = temperature()
+    if max < tem:
+        max = tem
+    elif min > tem:
+        min = tem
+
+    display.scroll(tem)
+    
+    if button_a.is_pressed():
+        display.scroll(max)
+    elif button_b.is_pressed():
+        display.scroll(min)
