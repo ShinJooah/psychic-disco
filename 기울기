@@ -1,0 +1,30 @@
+from microbit import*
+
+while True:
+    """reading = accelerometer.get_y()
+    
+    if reading > 70:
+        display.show("R")
+    elif reading < -70:
+        display.show("L")
+    else:
+        display.show("-")"""
+        
+    X = accelerometer.get_x()
+    Y = accelerometer.get_y()
+    if abs(X)-abs(Y)>0:
+        if X < -20:
+            display.show(Image.ARROW_W)
+        elif X > 20:
+            display.show(Image.ARROW_E)
+        else:
+            display.show(Image.HEART)
+        
+   
+    else:
+        if Y < -20:
+            display.show(Image.ARROW_N)
+        elif Y > 20:
+            display.show(Image.ARROW_S)
+        else:
+            display.show(Image.HEART)
