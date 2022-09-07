@@ -1,0 +1,15 @@
+from microbit import*
+import music 
+import speech
+
+while True:
+    
+    if accelerometer.was_gesture("shake"):
+        for i in range(3):
+            display.show(Image.HEART)
+            sleep(300)
+            display.show(Image.HEART_SMALL)
+            sleep(300)
+    
+        speech.say("Happy Birth Day To doodoo", speed=72, pitch=64, throat=60 , mouth=128)
+        music.play(music.BIRTHDAY, wait=False)
