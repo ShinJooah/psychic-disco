@@ -1,0 +1,12 @@
+from microbit import*
+
+
+LI = display.read_light_level()
+while True:
+    li = display.read_light_level()
+    if li < LI:
+        pin1.write_digital(1)
+    else:
+        pin1.write_digital(0)
+    
+    
