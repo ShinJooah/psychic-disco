@@ -1,0 +1,11 @@
+from microbit import*
+
+num = 0
+while True:
+    
+    num = num + 1
+    display.scroll(num)
+    
+    if button_b.was_pressed():
+        display.scroll("Stop")
+        break
