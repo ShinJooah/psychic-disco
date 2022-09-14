@@ -1,0 +1,21 @@
+from microbit import *
+import neopixel
+
+np_LED = neopixel.NeoPixel(pin1, 1)
+
+while True:
+    
+    np_LED[0] = (255,0,0)
+    np_LED.show()
+    sleep(3000)
+    
+    np_LED[0] = (0,255,0)
+    np_LED.show()
+    for i in range(5,-1,-1):
+        display.show(i)
+        sleep(1000)
+    
+    np_LED[0] = (255,255,0)
+    np_LED.show()
+    sleep(2000)
+    
