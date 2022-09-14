@@ -1,0 +1,17 @@
+from microbit import *
+import music
+import speech
+
+c=["C4:4"]
+for i in range(20,1,-1):
+    display.scroll(i)
+    if i<=5 and i>0:
+        music.play(music.ENTERTAINER)
+        for j in range(5):   
+            pin0.write_digital(1)
+            sleep(40)
+            pin0.write_digital(0)
+    elif i == 0:
+        for k in range(10):
+            music.play(c)
+            
