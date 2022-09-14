@@ -1,0 +1,29 @@
+from microbit import *
+import neopixel
+
+person = Image("00900:09990:00900:09090:09090")
+none = Image("00000:00000:99999:00000:00000")
+
+display.clear()
+pin1.write_digital(0)
+
+np_LED = neopixel.NeoPixel(pin4, 1)
+
+while True:
+    if pin1.read_digital() == 1:
+        display.show(person)
+        np_LED[0] = (255,0,0)
+        np_LED.show()
+        sleep(300)
+        
+    else:
+        display.show(none)
+        pin1.write_digital(0)
+        np_LED[0] = (0,0,0)
+        np_LED.show()
+        sleep(300)
+    
+    
+    
+    
+    
