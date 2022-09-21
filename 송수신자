@@ -1,0 +1,20 @@
+from microbit import *
+import radio
+radio.on()
+radio.config(group = 50)
+
+while True:
+    msg = radio.receive()
+    
+    if msg == "temp":
+        temp = temperature()
+        radio.send(str(temp))
+        display.show("T")
+        sleep(3000)
+        
+    if msg =="light":
+        light = display.read_light_level()
+        radio.send(str(light))
+        display.show("L")
+        sleep(3000)
+        
